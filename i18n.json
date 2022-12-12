@@ -1,0 +1,17 @@
+{
+  "locales": ["en", "vi"],
+  "defaultLocale": "en",
+  "keySeparator": false,
+  "nsSeparator": false,
+  "pages": {
+    "*": ["common"],
+    "/": ["home"],
+    "rgx:^/news": ["news"],
+    "rgx:^/magazine": ["news"],
+    "rgx:^/games": ["game"],
+    "rgx:^/leadership": ["bod"],
+    "/about-us": ["about-us"],
+    "/career": ["career"],
+    "rgx:^/career": ["career"]
+  }
+}
