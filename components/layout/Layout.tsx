@@ -13,11 +13,13 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   return (
-    <main className=" max-w-[1080px] mx-auto mt-[50px] mb-0">
-      <SEOHead seoTitle={props.seoTitle} />
-      <Header title={props.title} />
-      {props.children}
-      <Footer />
+    <main className="w-full">
+      <div className="max-w-[1164px] mx-auto mb-0">
+        <SEOHead seoTitle={props.seoTitle} />
+        <Header title={props.title} />
+        {props.children}
+        <Footer />
+      </div>
     </main>
   );
 };
