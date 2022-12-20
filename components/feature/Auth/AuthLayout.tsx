@@ -15,7 +15,7 @@ const AuthLayout = ({ children }: IAuthLayoutProps) => {
       <div className="absolute left-[36px] top-[28px]">
         <Logo type="white" />
       </div>
-      <div className="absolute right-[36px] top-[28px] text-[14px] text-white">
+      <div className="absolute right-[36px] top-[28px] text-[14px] text-white flex">
         {pathname.includes('signin') && (
           <>
             <span>Bạn chưa có tài khoản? </span>
@@ -33,7 +33,7 @@ const AuthLayout = ({ children }: IAuthLayoutProps) => {
           </>
         )}
       </div>
-      <div className="w-[964px] max-w-[90%] min-h-[600px] bg-white rounded-[12px] ">{children}</div>
+      <div className="w-[964px] max-w-[90%] h-[600px] bg-white rounded-[12px] overflow-hidden flex">{children}</div>
     </div>
   );
 };

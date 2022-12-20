@@ -17,7 +17,7 @@ const ThemeProvider = ({ children }: IThemeProps) => {
         },
         primaryColor: 'palate',
         primaryShade: 0,
-        fontFamily: 'Poppins, sans-serif',
+        fontFamily: 'Open Sans, sans-serif',
       }}
     >
       {children}

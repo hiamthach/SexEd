@@ -6,6 +6,7 @@ interface ButtonProps {
   fill?: 'full' | 'fit';
   type?: 'primary' | 'secondary';
   onClick?: Function;
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }
 
 const useStyles = createStyles({
@@ -15,7 +16,7 @@ const useStyles = createStyles({
   },
 });
 
-function CusBtn({ content, fill = 'fit', type = 'primary', onClick }: ButtonProps) {
+function CusBtn({ content, fill = 'fit', type = 'primary', onClick, size = 'sm' }: ButtonProps) {
   const { classes } = useStyles();
 
   return (
@@ -27,6 +28,7 @@ function CusBtn({ content, fill = 'fit', type = 'primary', onClick }: ButtonProp
           onClick();
         }
       }}
+      size={size}
     >
       {content}
     </Button>
