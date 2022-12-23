@@ -6,7 +6,7 @@ import Header from './Header';
 
 interface LayoutProps {
   seoTitle?: string;
-  title: string;
+  title?: string;
   // headerBanner: HTMLVideoElement | HTMLImageElement;
   children: JSX.Element | JSX.Element[];
 }
@@ -15,7 +15,7 @@ const Layout = (props: LayoutProps) => {
   return (
     <main className="w-full">
       <SEOHead seoTitle={props.seoTitle} />
-      <Header title={props.title} />
+      <Header />
       {props.children}
       <Footer />
     </main>

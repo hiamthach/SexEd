@@ -1,7 +1,9 @@
 import React from 'react';
 
-const BlogPage = () => {
-  return <div>BlogPage</div>;
+import BlogPage from 'components/feature/Blog/BlogPage';
+
+const Blog = () => {
+  return <BlogPage />;
 };
 
-export default BlogPage;
+export default Blog;
