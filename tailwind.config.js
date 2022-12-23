@@ -4,18 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'red-primary': '#ff3d79',
-        'black-primary': '#333333',
-        'bg-light': '#fffefa',
-        'text-primary': '#8a8a8a',
-        'white': '#fffefa',
+        'palette-1': '#e0bbe4',
+        'palette-2': '#957dad',
+        'palette-3': '#d291bc',
+        'palette-4': '#fec8d8',
+        'palette-5': '#ffdfd3',
       },
       backgroundColor: {
-        light: '#fffefa',
+        light: '#ffdfd3',
       },
       fontFamily: {
-        primary: ['Bebas Neue', 'cursive'],
-        secondary: ['Lato', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
+        body: ['Open Sans', 'sans-serif'],
       },
     },
   },

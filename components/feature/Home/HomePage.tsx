@@ -1,13 +1,19 @@
 import React from 'react';
 
-// import bannerVideo from "../../../public/videos/banner.mp4";
+import Image from 'next/image';
+
 import Layout from '../../layout/Layout';
-import Navbar from './components/Navbar';
+import HomeSlogan from './components/HomeSlogan';
+import HomeCard from './components/HomeCard';
 
 export default function HomePage() {
   return (
-    <Layout seoTitle="Next - Ecommerce" title="FEAST YOUR EYES · FILL YOUR BOOTS">
-      <span>Layout</span>
+    <Layout seoTitle="SXus" title="Trang cung cấp thông tin và trắc nghiệm về giáo dục giới tính toàn diện">
+      {/* <Image src={'/images/img-1.png'} alt="banner" width={1164} height={1164} className="w-full h-auto" /> */}
+      <div className="min-h-[90vh] max-w-[1164px] m-auto">
+        <HomeSlogan />
+        <HomeCard />
+      </div>
     </Layout>
   );
 }
