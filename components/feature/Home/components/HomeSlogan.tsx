@@ -17,7 +17,7 @@ const HomeSlogan = () => {
 
       <div className="w-[60%] flex gap-[40px]">
         <div
-          className="rounded-[36px] bg-palette-1 p-[32px] w-[50%] hover:shadow-lg cursor-pointer"
+          className="rounded-[36px] bg-light p-[32px] w-[50%] hover:shadow-lg cursor-pointer"
           onClick={() => {
             router.push('/blog');
           }}
@@ -27,7 +27,7 @@ const HomeSlogan = () => {
           <p>Mollit ullamco laboris elit eiusmod aute adipisicing.</p>
         </div>
         <div
-          className="rounded-[36px] bg-palette-1 p-[32px] w-[50%] hover:shadow-lg cursor-pointer"
+          className="rounded-[36px] bg-light p-[32px] w-[50%] hover:shadow-lg cursor-pointer"
           onClick={() => {
             router.push('/test');
           }}
