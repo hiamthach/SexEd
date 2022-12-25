@@ -4,12 +4,7 @@ import Logo from 'components/common/Logo/Logo';
 import CusBtn from 'components/common/CusBtn/CusBtn';
 import { FiSearch } from 'react-icons/fi';
 
-interface HeaderProps {
-  title: string;
-  headerBanner?: HTMLVideoElement | HTMLImageElement;
-}
-
-const Header = ({ title, headerBanner }: HeaderProps) => {
+const Header = () => {
   return (
     <header className="w-full">
       <main className="max-w-[1164px] mx-auto flex justify-between items-center py-[14px] px-[30px] lg:px-0">
