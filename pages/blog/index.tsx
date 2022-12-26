@@ -2,6 +2,7 @@ import React from 'react';
 import BlogPage from 'components/feature/Blog/BlogPage';
 import { IBlogList } from 'data/interfaces/IBlog';
 
+
 interface IBlogProps {
   data: IBlogList;
 }
