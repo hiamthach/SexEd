@@ -11,16 +11,16 @@ const Footer = () => {
         <Logo />
         <div className="flex flex-col gap-[6px]">
           <h3 className="text-[20px] font-[600] mb-[6px] leading-[1]">Khám phá</h3>
-          <Link href={'/blog'} className="text-palette-2 font-[500] hover:underline no-underline active:text-palette-3">
+          <Link href={'/blog'} className="text-palette-2 text-[14px] font-[500] hover:underline no-underline active:text-palette-3">
             Bài viết
           </Link>
-          <Link href={'/test'} className="text-palette-2 font-[500] hover:underline no-underline active:text-palette-3">
+          <Link href={'/test'} className="text-palette-2 text-[14px] font-[500] hover:underline no-underline active:text-palette-3">
             Trắc nghiệm
           </Link>
         </div>
         <div className="flex flex-col gap-[6px]">
           <h3 className="text-[20px] font-[600] mb-[6px] leading-[1]">Về chúng tôi</h3>
-          <Link href={'/'} className="text-palette-2 font-[500] hover:underline no-underline active:text-palette-3">
+          <Link href={'/'} className="text-palette-2 text-[14px] font-[500] hover:underline no-underline active:text-palette-3">
             Liên hệ
           </Link>
         </div>

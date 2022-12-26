@@ -14,7 +14,7 @@ interface LayoutProps {
 const Layout = (props: LayoutProps) => {
   return (
     <main className="w-full">
-      <SEOHead seoTitle={props.seoTitle} />
+      <SEOHead seoTitle={props.seoTitle} description={props.title} />
       <Header />
       {props.children}
       <Footer />

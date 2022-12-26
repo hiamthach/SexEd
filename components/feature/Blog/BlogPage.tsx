@@ -1,11 +1,23 @@
 import React from 'react';
 
 import Layout from 'components/layout/Layout';
+import Container from 'components/layout/Container';
+import BlogCarousel from './components/BlogCarousel';
+import BlogContent from './components/BlogContent';
 
-const BlogPage = () => {
+import { IBlogList } from 'data/interfaces/IBlog';
+
+interface IBlogPageProps {
+  blogList: IBlogList;
+}
+
+const BlogPage = ({ blogList }: IBlogPageProps) => {
   return (
     <Layout seoTitle="SXus | Blog">
-      <div className="min-h-[90vh] max-w-[1164px] m-auto"></div>
+      <Container>
+        <BlogCarousel blogList={blogList.slice(0, 3)} />
+        <BlogContent blogList={blogList} />
+      </Container>
     </Layout>
   );
 };

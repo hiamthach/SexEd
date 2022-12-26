@@ -4,11 +4,6 @@ import Logo from 'components/common/Logo/Logo';
 import CusBtn from 'components/common/CusBtn/CusBtn';
 import { FiSearch } from 'react-icons/fi';
 
-interface HeaderProps {
-  title: string;
-  headerBanner?: HTMLVideoElement | HTMLImageElement;
-}
-
 const Header = () => {
   return (
     <header className="w-full">
