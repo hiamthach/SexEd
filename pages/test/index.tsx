@@ -1,7 +1,8 @@
 import React from 'react';
+import TestPage from 'components/feature/Test/TestPage';
 
-const TestPage = () => {
-  return <div>TestPage</div>;
+const Test = () => {
+  return <TestPage />;
 };
 
-export default TestPage;
+export default Test;
