@@ -21,8 +21,8 @@ const BlogCarousel = ({ blogList }: IBlogCarousel) => {
               <h2 className="text-white font-heading text-[36px] leading-[42px] mb-[12px] line-clamp-3">{blog.title}</h2>
               <h6 className="text-white text-[16px] font-[400] ">{dateHelper.format(blog.createdDate)}</h6>
             </div>
-            <div className="overlay bg-black opacity-[0.2] z-[10] absolute left-0 top-0 right-0 w-full h-full rounded-xl"></div>
-            <Image src={blog.coverImg} alt={blog.title} fill className="object-center object-cover rounded-xl" />
+            <div className="overlay bg-black opacity-[0.2] z-[10] absolute left-0 top-0 right-0 w-full h-full "></div>
+            <Image src={blog.coverImg} alt={blog.title} fill className="object-center object-cover " />
           </div>
         </Carousel.Slide>
       );
@@ -30,7 +30,7 @@ const BlogCarousel = ({ blogList }: IBlogCarousel) => {
   };
 
   return (
-    <Carousel sx={{ width: '100%' }} mx="auto" withIndicators height={560}>
+    <Carousel sx={{ width: '100%', height: '100vh' }} mx="auto" withIndicators height={'100vh'}>
       {blogList && renderBlogSlide()}
     </Carousel>
   );

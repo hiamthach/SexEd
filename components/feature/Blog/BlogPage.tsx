@@ -14,8 +14,8 @@ interface IBlogPageProps {
 const BlogPage = ({ blogList }: IBlogPageProps) => {
   return (
     <Layout seoTitle="SXus | Blog">
+      <BlogCarousel blogList={blogList.slice(0, 3)} />
       <Container>
-        <BlogCarousel blogList={blogList.slice(0, 3)} />
         <BlogContent blogList={blogList} />
       </Container>
     </Layout>

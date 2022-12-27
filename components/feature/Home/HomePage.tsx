@@ -10,8 +10,8 @@ import HomeCard from './components/HomeCard';
 export default function HomePage() {
   return (
     <Layout seoTitle="SXus" title="Trang cung cấp thông tin và trắc nghiệm về giáo dục giới tính toàn diện">
+      <Image src={'/images/wallpaper.jpg'} width={1000} height={500} alt="background" className="w-full h-[100vh] object-cover object-center relative" property="" />
       <Container>
-        <Image src={'/images/wallpaper.jpg'} width={1000} height={500} alt="background" className="w-full h-auto relative" property="" />
         <HomeSlogan />
         <HomeCard />
       </Container>

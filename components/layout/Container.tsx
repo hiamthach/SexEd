@@ -5,7 +5,7 @@ interface IContainerProps {
 }
 
 const Container = ({ children }: IContainerProps) => {
-  return <div className="min-h-[90vh] max-w-[1164px] m-auto">{children}</div>;
+  return <div className="min-h-[90vh] w-full px-[24px] xl:max-w-[1164px] xl:px-0 m-auto">{children}</div>;
 };
 
 export default Container;
