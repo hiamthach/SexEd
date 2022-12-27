@@ -14,7 +14,7 @@ const BlogContent = ({ blogList }: IBlogContent) => {
   };
 
   return (
-    <div className="text-center py-[130px]">
+    <div className="text-center py-[80px]">
       <div className="flex justify-between gap-[30px] mb-[32px]">{blogList && renderBlogs()}</div>
       <CusBtn content="Xem thêm"></CusBtn>
     </div>

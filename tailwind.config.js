@@ -9,6 +9,8 @@ module.exports = {
         'palette-3': '#d291bc',
         'palette-4': '#fec8d8',
         'palette-5': '#ffdfd3',
+        'text-black': '#171A1FFF',
+        'text-body': '#292929',
       },
       backgroundColor: {
         light: '#ffdfd3',
@@ -19,5 +21,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };

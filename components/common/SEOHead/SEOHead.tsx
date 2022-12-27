@@ -26,7 +26,7 @@ export const SEOHead = ({ seoTitle, description, children }: Props) => {
   return (
     <NextHead>
       <title>{meta.seoTitle}</title>
-      <link rel="icon" href="/favicon/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="keyword" content="SXus" />
       <meta name="description" content={meta.description} />

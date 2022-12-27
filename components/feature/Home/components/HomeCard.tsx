@@ -16,8 +16,8 @@ const HomeCard = () => {
 
   return (
     <div className="text-center mt-[30px] mb-[120px] ">
-      <h1 className="font-heading text-[48px] mb-[14px] leading-[68px]">Nổi bật</h1>
-      <p className="max-w-[590px] break-words text-[18px] m-auto text-[#9095A1FF] mb-[72px]">
+      <h1 className="font-heading text-[48px] mb-[12px] leading-[64px] font-[900] ">Nổi bật</h1>
+      <p className="max-w-[590px] break-words text-[17px] m-auto text-[#9095A1FF] mb-[56px]">
         Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.
       </p>
 

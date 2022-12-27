@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import SEOHead from 'components/common/SEOHead/SEOHead';
 import AuthLayout from 'components/feature/Auth/AuthLayout';
@@ -49,9 +50,20 @@ const SignIn = () => {
             {...form.getInputProps('password')}
             className={classes.input}
           />
-          <Checkbox color={'palate.2'} label="Lưu đăng nhập" mt="md" />
+          <div className="flex justify-between items-center mt-4">
+            <Checkbox color={'palate.2'} label="Lưu đăng nhập" />
+            <Link href={'/auth/forgot'} className="text-[14px] text-palette-2 active:text-palette-3">
+              Quên mật khẩu
+            </Link>
+          </div>
         </form>
         <CusBtn content="Đăng nhập" fill="full" size="md"></CusBtn>
+        <p className="text-[14px] mt-[16px]">
+          Bạn chưa có tài khoản?{' '}
+          <Link href={'/auth/signup'} className="text-palette-2 active:text-palette-3">
+            Đăng ký
+          </Link>
+        </p>
       </div>
     </AuthLayout>
   );

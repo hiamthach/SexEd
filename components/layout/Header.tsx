@@ -6,7 +6,7 @@ import { FiSearch } from 'react-icons/fi';
 
 const Header = () => {
   return (
-    <header className="w-full">
+    <header className="w-full mb-[24px] shadow-[0px 0px 1px #171a1f] ">
       <main className="max-w-[1164px] mx-auto flex justify-between items-center py-[14px] px-[30px] lg:px-0">
         <div className="flex items-center gap-[48px]">
           <Logo />
