@@ -3,17 +3,18 @@ import React from 'react';
 import Image from 'next/image';
 
 import Layout from '../../layout/Layout';
+import Container from 'components/layout/Container';
 import HomeSlogan from './components/HomeSlogan';
 import HomeCard from './components/HomeCard';
 
 export default function HomePage() {
   return (
     <Layout seoTitle="SXus" title="Trang cung cấp thông tin và trắc nghiệm về giáo dục giới tính toàn diện">
-      {/* <Image src={'/images/img-1.png'} alt="banner" width={1164} height={1164} className="w-full h-auto" /> */}
-      <div className="min-h-[90vh] max-w-[1164px] m-auto">
+      <Image src={'/images/blogs/blog-1.jpg'} width={1000} height={500} alt="background" className="w-full h-[100vh] object-cover object-center relative" property="" />
+      <Container>
         <HomeSlogan />
         <HomeCard />
-      </div>
+      </Container>
     </Layout>
   );
 }

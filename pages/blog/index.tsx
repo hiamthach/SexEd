@@ -1,7 +1,23 @@
 import React from 'react';
+import BlogPage from 'components/feature/Blog/BlogPage';
+import { IBlogList } from 'data/interfaces/IBlog';
 
-const BlogPage = () => {
-  return <div>BlogPage</div>;
+
+interface IBlogProps {
+  data: IBlogList;
+}
+
+const Blog = ({ data }: IBlogProps) => {
+  return <BlogPage blogList={data} />;
 };
 
-export default BlogPage;
+export async function getServerSideProps() {
+  const res = await fetch('http://localhost:3000/api/blogs');
+  const data = await res.json();
+
+  return {
+    props: { data },
+  };
+}
+
+export default Blog;
