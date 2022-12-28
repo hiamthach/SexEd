@@ -4,10 +4,9 @@ import Link from 'next/link';
 
 import SEOHead from 'components/common/SEOHead/SEOHead';
 import AuthLayout from 'components/feature/Auth/AuthLayout';
-import Logo from 'components/common/Logo/Logo';
 
 import { useForm } from '@mantine/form';
-import { TextInput, createStyles, PasswordInput, Checkbox, Button } from '@mantine/core';
+import { TextInput, createStyles, PasswordInput, Checkbox, Button, ActionIcon } from '@mantine/core';
 import { IconEyeCheck, IconEyeOff, IconHome } from '@tabler/icons';
 
 import AuthConsumer from 'hooks/useAuth';
@@ -49,7 +48,9 @@ const SignIn = () => {
       </div>
 
       <Link href={'/'} className="absolute right-[24px] top-[20px] cursor-pointer z-10">
-        <IconHome size={24} className="text-palette-2" />
+        <ActionIcon>
+          <IconHome size={24} className="text-palette-2" />
+        </ActionIcon>
       </Link>
 
       <div className="px-4 sm:px-[100px] pt-[100px] text-center flex-1 relative">
