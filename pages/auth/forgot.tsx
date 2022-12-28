@@ -7,7 +7,7 @@ import AuthLayout from 'components/feature/Auth/AuthLayout';
 import authApi from '../../firebase/api/authApi';
 
 import { useForm } from '@mantine/form';
-import { TextInput, createStyles, Button } from '@mantine/core';
+import { TextInput, createStyles, Button, ActionIcon } from '@mantine/core';
 import { IconHome } from '@tabler/icons';
 
 const useStyles = createStyles({
@@ -43,7 +43,9 @@ const ForgotPassword = () => {
         <Image src="/images/auth-icon-left.png" height={360} width={360} alt={'logo'} className="w-full h-auto" />
       </div>
       <Link href={'/'} className="absolute right-[24px] top-[20px] cursor-pointer z-10">
-        <IconHome size={24} className="text-palette-2" />
+        <ActionIcon>
+          <IconHome size={24} className="text-palette-2" />
+        </ActionIcon>
       </Link>
       <div className="px-4 sm:px-[100px] pt-[100px] text-center flex-1 relative">
         <h3 className="font-heading text-[32px]">Quên mật khẩu</h3>

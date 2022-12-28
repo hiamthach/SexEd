@@ -6,7 +6,7 @@ import SEOHead from 'components/common/SEOHead/SEOHead';
 import AuthLayout from 'components/feature/Auth/AuthLayout';
 
 import { useForm } from '@mantine/form';
-import { TextInput, createStyles, PasswordInput, Button, Grid, FileInput } from '@mantine/core';
+import { TextInput, createStyles, PasswordInput, Button, Grid, FileInput, ActionIcon } from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
 import { toast } from 'react-toastify';
 import { IconEyeCheck, IconEyeOff, IconHome } from '@tabler/icons';
@@ -95,7 +95,9 @@ const SignUp = () => {
     <AuthLayout>
       <SEOHead seoTitle="SXus | Đăng ký" />
       <Link href={'/'} className="absolute right-[24px] top-[20px] cursor-pointer z-10">
-        <IconHome size={24} className="text-palette-2" />
+        <ActionIcon>
+          <IconHome size={24} className="text-palette-2" />
+        </ActionIcon>
       </Link>
       <div className=" px-6 sm:px-[100px] flex items-center justify-center gap-[24px] flex-col text-center">
         <h3 className="font-heading text-[32px]">Đăng ký</h3>

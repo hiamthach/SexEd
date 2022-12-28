@@ -1,18 +1,36 @@
 import React from 'react';
 
-import { IconArticle } from '@tabler/icons';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+
+import { IconArticle } from '@tabler/icons';
+
+import CusBtn from 'components/common/CusBtn/CusBtn';
 
 const HomeSlogan = () => {
   const router = useRouter();
 
   return (
     <div className="w-full py-[70px] flex gap-[42px] xl:gap-[82px] items-center flex-col md:flex-row">
+      {/* <h3 className="font-heading text-[32px] leading-[36px] text-palette-2 text-center mx-auto">Chung tay xây dựng trường học không định kiến!</h3>
+
+      <div className="flex justify-between items-center">
+        <div className="w-[45%]">
+          <h4 className="font-heading text-[30px] leading-[36px]">Bài viết</h4>
+          <p className="text-[#9095A1FF] text-[18px] leading-[24px] my-[16px]">
+            Cổng thông tin về giáo dục giới tính toàn diện. Luôn cập nhật sớm nhất những bài viết bổ ích cho giới trẻ.
+          </p>
+          <CusBtn content="Xem thêm" onClick={() => router.push('/blog')} />
+        </div>
+        <Image width={400} height={400} alt="" className="w-[45%] max-w-[400px] h-auto" src={'/images/img-1.png'} />
+      </div> */}
+
       <div className="w-full text-center md:text-left md:w-[40%]">
         <h3 className="font-heading text-[32px] leading-[36px] text-palette-2 ">Chung tay xây dựng trường học không định kiến!</h3>
-        {/* <p className="text-[16px] mt-[16px] leading-[24px]">
-          Voluptate excepteur fugiat excepteur consectetur elit deserunt anim sunt officia ipsum. Sit do magna dolore do cupidatat sit cupidatat aute sit velit excepteur nostrud et{' '}
-        </p> */}
+        <p className="text-[16px] mt-[16px] leading-[24px]">
+          Người sử dụng sẽ nhận biết được những thông tin được cung cấp về Xu hướng tính dục và các bệnh lây truyền/ nhiễm trùng qua đường tình dục thông qua việc trả lời những câu
+          hỏi trắc nghiệm, từ đó web sẽ đề xuất những trung tâm, cơ sở tham vấn/ khám/ chữa trị các nhu cầu, vấn đề của người dùng.
+        </p>
       </div>
 
       <div className="w-full md:w-[60%] flex gap-[40px] flex-col sm:flex-row">
