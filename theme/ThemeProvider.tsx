@@ -3,7 +3,7 @@ import { MantineProvider } from '@mantine/core';
 import React from 'react';
 
 interface IThemeProps {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 }
 
 const ThemeProvider = ({ children }: IThemeProps) => {
