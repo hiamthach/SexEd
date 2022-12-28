@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Logo from 'components/common/Logo/Logo';
 import CusBtn from 'components/common/CusBtn/CusBtn';
-import { FiSearch, FiMenu } from 'react-icons/fi';
-import { Drawer } from '@mantine/core';
+import { FiSearch, FiMenu, FiUser } from 'react-icons/fi';
+import { IoIosLogOut } from 'react-icons/io';
+import { Drawer, Avatar, Menu } from '@mantine/core';
+import AuthConsumer from 'hooks/useAuth';
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
+
+  const { currentUser, isAuth, signOut } = AuthConsumer();
 
   return (
     <header className="w-full shadow-[0px 0px 1px #171a1f] max-[400px]:px-[12px] px-[24px] fixed top-0 left-0 right-0 z-[10] bg-white shadow-sm">
@@ -38,16 +42,40 @@ const Header = () => {
             }}
           />
         </div>
-        <div className="flex items-center gap-[24px]">
-          <FiSearch className="text-palette-2 text-[18px] cursor-pointer active:text-palette-5 hidden sm:block" />
+        {isAuth && currentUser ? (
+          <Menu shadow="md" width={200} trigger="hover">
+            <Menu.Target>
+              <Avatar radius="xl" className="cursor-pointer border hover:border-palette-1">
+                <FiUser size={20} className="text-palette-1" />
+              </Avatar>
+            </Menu.Target>
 
-          <Link href={'/auth/signin'} className="text-[14px] text-palette-2 no-underline hover:underline active:text-palette-3">
-            Đăng nhập
-          </Link>
-          <Link href={'/auth/signup'}>
-            <CusBtn content="Đăng ký"></CusBtn>
-          </Link>
-        </div>
+            <Menu.Dropdown>
+              <Menu.Label className="text-sm">{currentUser.email}</Menu.Label>
+              <Menu.Item
+                color="red"
+                icon={<IoIosLogOut size={16} />}
+                className="hover:bg-red-50 text-red-600"
+                onClick={() => {
+                  signOut();
+                }}
+              >
+                Đăng xuất
+              </Menu.Item>
+            </Menu.Dropdown>
+          </Menu>
+        ) : (
+          <div className="flex items-center gap-[24px]">
+            <FiSearch className="text-palette-2 text-[18px] cursor-pointer active:text-palette-5 hidden sm:block" />
+
+            <Link href={'/auth/signin'} className="text-[14px] text-palette-2 no-underline hover:underline active:text-palette-3">
+              Đăng nhập
+            </Link>
+            <Link href={'/auth/signup'}>
+              <CusBtn content="Đăng ký"></CusBtn>
+            </Link>
+          </div>
+        )}
       </main>
       <Drawer
         opened={drawerOpen}

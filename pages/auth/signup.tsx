@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import SEOHead from 'components/common/SEOHead/SEOHead';
 import AuthLayout from 'components/feature/Auth/AuthLayout';
+import SignUpStep1 from 'components/feature/Auth/components/SignUpStep1';
+import SignUpStep2 from 'components/feature/Auth/components/SignUpStep2';
+import SignUpStep3 from 'components/feature/Auth/components/SignUpStep3';
 
 import { useForm } from '@mantine/form';
 import { TextInput, createStyles, PasswordInput, Button, Stepper } from '@mantine/core';
 import { IconEyeCheck, IconEyeOff } from '@tabler/icons';
-import Link from 'next/link';
 import { IAuthForm } from 'firebase/api/authApi';
 import AuthConsumer from 'hooks/useAuth';
-import { useRouter } from 'next/router';
 
 const useStyles = createStyles({
   input: {
@@ -41,6 +44,7 @@ const SignUp = () => {
   const router = useRouter();
   const { signUp } = AuthConsumer();
   const [active, setActive] = useState(1);
+  const [signUpData, setSignUpData] = useState({});
   const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
   const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
 
@@ -49,6 +53,17 @@ const SignUp = () => {
       await signUp(values);
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const renderStep = () => {
+    switch (active) {
+      case 1:
+        return <SignUpStep2 />;
+      case 2:
+        return <SignUpStep3 />;
+      default:
+        return <SignUpStep1 />;
     }
   };
 
@@ -122,6 +137,7 @@ const SignUp = () => {
             Đăng ký
           </Link>
         </p>
+        {renderStep()}
       </div>
     </AuthLayout>
   );
