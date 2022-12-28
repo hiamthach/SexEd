@@ -1,14 +1,23 @@
 import { auth } from '../store';
-import { signInWithEmailAndPassword, signOut, sendPasswordResetEmail, setPersistence, browserLocalPersistence, updatePassword, User } from 'firebase/auth';
+import {
+  signInWithEmailAndPassword,
+  signOut,
+  sendPasswordResetEmail,
+  setPersistence,
+  browserLocalPersistence,
+  updatePassword,
+  User,
+  createUserWithEmailAndPassword,
+} from 'firebase/auth';
 import { toast } from 'react-toastify';
 
-export interface ISignIn {
+export interface IAuthForm {
   email: string;
   password: string;
 }
 
 const authApi = {
-  signIn: async ({ email, password }: ISignIn) => {
+  signIn: async ({ email, password }: IAuthForm) => {
     try {
       const res = await setPersistence(auth, browserLocalPersistence).then(() => {
         return signInWithEmailAndPassword(auth, email, password);
@@ -20,19 +29,31 @@ const authApi = {
       return error;
     }
   },
-  signOut: async () => {
-    try {
-      signOut(auth).then(() => {
-        toast.success('Đăng xuất thành công');
+  signUp: async ({ email, password }: IAuthForm) => {
+    return createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        toast.success('Tạo tài khoản thành công');
+        return userCredential;
+      })
+      .catch((error) => {
+        toast.error(error.message);
+        return error;
       });
-    } catch (error: any) {
-      toast.error(error.message);
-      return error;
-    }
+  },
+  signOut: async () => {
+    return signOut(auth)
+      .then(() => {
+        toast.success('Đăng xuất thành công');
+      })
+      .catch((error) => {
+        toast.error(error.message);
+        return error;
+      });
   },
   forgotPassword: async (email: string) => {
     await sendPasswordResetEmail(auth, email)
       .then((res) => {
+        toast.success('Link đổi mật khẩu đã được gửi đến mail');
         return res;
       })
       .catch((error) => {
