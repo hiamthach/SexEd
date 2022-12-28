@@ -8,6 +8,7 @@ import authApi from '../../firebase/api/authApi';
 
 import { useForm } from '@mantine/form';
 import { TextInput, createStyles, Button } from '@mantine/core';
+import { IconHome } from '@tabler/icons';
 
 const useStyles = createStyles({
   input: {
@@ -38,10 +39,13 @@ const ForgotPassword = () => {
     <AuthLayout>
       <SEOHead seoTitle="SXus | Đăng nhập" />
 
-      <div className="w-[400px] h-full bg-palette-2 p-[32px] flex justify-center items-center">
+      <div className="hidden lg:flex w-[400px] h-[600px] bg-palette-2 p-[32px] justify-center items-center">
         <Image src="/images/auth-icon-left.png" height={360} width={360} alt={'logo'} className="w-full h-auto" />
       </div>
-      <div className="px-[100px] pt-[100px] text-center flex-1">
+      <Link href={'/'} className="absolute right-[24px] top-[20px] cursor-pointer z-10">
+        <IconHome size={24} className="text-palette-2" />
+      </Link>
+      <div className="px-4 sm:px-[100px] pt-[100px] text-center flex-1 relative">
         <h3 className="font-heading text-[32px]">Quên mật khẩu</h3>
         <form
           className="my-[36px] text-left"

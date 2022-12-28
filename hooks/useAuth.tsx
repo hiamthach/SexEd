@@ -11,7 +11,7 @@ import { Loader } from '@mantine/core';
 interface IAuthValue {
   isAuth: boolean;
   loading: boolean;
-  signIn(values: IAuthForm): Promise<unknown>;
+  signIn(values: IAuthForm): Promise<User | any>;
   signUp(values: IAuthForm): Promise<unknown>;
   signOut(): Promise<void>;
   changePassword(newPassword: string): Promise<void>;
@@ -69,6 +69,7 @@ function useAuth() {
         if (res?.user) {
           router.push('/auth/signin');
         }
+        return res.user;
       } catch (err) {
         return err;
       }

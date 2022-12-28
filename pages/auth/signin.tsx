@@ -4,10 +4,11 @@ import Link from 'next/link';
 
 import SEOHead from 'components/common/SEOHead/SEOHead';
 import AuthLayout from 'components/feature/Auth/AuthLayout';
+import Logo from 'components/common/Logo/Logo';
 
 import { useForm } from '@mantine/form';
 import { TextInput, createStyles, PasswordInput, Checkbox, Button } from '@mantine/core';
-import { IconEyeCheck, IconEyeOff } from '@tabler/icons';
+import { IconEyeCheck, IconEyeOff, IconHome } from '@tabler/icons';
 
 import AuthConsumer from 'hooks/useAuth';
 import { IAuthForm } from 'firebase/api/authApi';
@@ -43,10 +44,15 @@ const SignIn = () => {
     <AuthLayout>
       <SEOHead seoTitle="SXus | Đăng nhập" />
 
-      <div className="w-[400px] h-full bg-palette-2 p-[32px] flex justify-center items-center">
+      <div className="hidden lg:flex w-[400px] h-[600px] bg-palette-2 p-[32px] justify-center items-center">
         <Image src="/images/auth-icon-left.png" height={360} width={360} alt={'logo'} className="w-full h-auto" />
       </div>
-      <div className="px-[100px] pt-[100px] text-center flex-1">
+
+      <Link href={'/'} className="absolute right-[24px] top-[20px] cursor-pointer z-10">
+        <IconHome size={24} className="text-palette-2" />
+      </Link>
+
+      <div className="px-4 sm:px-[100px] pt-[100px] text-center flex-1 relative">
         <h3 className="font-heading text-[32px]">Đăng nhập</h3>
         <form
           className="my-[36px] text-left"

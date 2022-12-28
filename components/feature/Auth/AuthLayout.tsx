@@ -12,11 +12,7 @@ const AuthLayout = ({ children }: IAuthLayoutProps) => {
 
   return (
     <div className="w-full min-h-screen bg-palette-1 relative flex items-center justify-center">
-      <div className="absolute left-[36px] top-[28px]">
-        <Logo type="white" />
-      </div>
-
-      <div className="w-[964px] max-w-[90%] h-[600px] bg-white rounded-[12px] overflow-hidden flex">{children}</div>
+      <div className="sm:w-[964px] w-full sm:max-w-[90%] min-h-[600px] bg-white rounded-[12px] overflow-hidden flex relative">{children}</div>
     </div>
   );
 };

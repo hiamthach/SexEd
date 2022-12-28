@@ -45,7 +45,7 @@ const Header = () => {
         {isAuth && currentUser ? (
           <Menu shadow="md" width={200} trigger="hover">
             <Menu.Target>
-              <Avatar radius="xl" className="cursor-pointer border hover:border-palette-1">
+              <Avatar radius="xl" className="cursor-pointer border border-palette-1">
                 <FiUser size={20} className="text-palette-1" />
               </Avatar>
             </Menu.Target>
