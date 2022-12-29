@@ -30,15 +30,17 @@ const authApi = {
     }
   },
   signUp: async ({ email, password }: IAuthForm) => {
-    return createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        toast.success('Tạo tài khoản thành công');
-        return userCredential;
-      })
-      .catch((error) => {
-        toast.error(error.message);
-        return error;
-      });
+    return setPersistence(auth, browserLocalPersistence).then(() => {
+      return createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          toast.success('Tạo tài khoản thành công');
+          return userCredential;
+        })
+        .catch((error) => {
+          toast.error(error.message);
+          return error;
+        });
+    });
   },
   signOut: async () => {
     return signOut(auth)

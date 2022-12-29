@@ -5,3 +5,11 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+module.exports = {
+  ...nextTranslate(),
+  images: {
+    domains: ['firebasestorage.googleapis.com'],
+  },
+  nextConfig,
+};

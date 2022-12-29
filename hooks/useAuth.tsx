@@ -1,8 +1,10 @@
-import React, { useState, useContext, useLayoutEffect } from 'react';
+import React, { useState, useContext, useLayoutEffect, useEffect } from 'react';
 
 import authApi from '../firebase/api/authApi';
+import userApi from '../firebase/api/userApi';
 import { auth } from '../firebase/store';
 import { IAuthForm } from '../firebase/api/authApi';
+import { IUserProfile } from '../firebase/api/userApi';
 import { User } from 'firebase/auth';
 import { useRouter } from 'next/router';
 
@@ -14,6 +16,7 @@ interface IAuthValue {
   signIn(values: IAuthForm): Promise<User | any>;
   signUp(values: IAuthForm): Promise<unknown>;
   signOut(): Promise<void>;
+  updateProfile(data: IUserProfile): Promise<unknown>;
   changePassword(newPassword: string): Promise<void>;
   currentUser: User | null;
 }
@@ -24,6 +27,7 @@ const authContext = React.createContext<IAuthValue>({
   signIn: async (values: IAuthForm) => {},
   signUp: async (values: IAuthForm) => {},
   signOut: async () => {},
+  updateProfile: async (data: IUserProfile) => {},
   changePassword: async (newPassword: string) => {},
   currentUser: null,
 });
@@ -36,6 +40,7 @@ function useAuth() {
 
   useLayoutEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
+      console.log(user);
       if (user) {
         setCurrentUser(user);
         setIsAuth(true);
@@ -48,6 +53,12 @@ function useAuth() {
     });
     return unsubscribe;
   }, []);
+
+  useEffect(() => {
+    if (isAuth) {
+      router.push('/');
+    }
+  }, [isAuth]);
 
   const values: IAuthValue = {
     isAuth,
@@ -81,6 +92,14 @@ function useAuth() {
     async changePassword(newPassword: string) {
       if (currentUser) {
         authApi.changePassword(currentUser, newPassword);
+      }
+    },
+    async updateProfile(data: IUserProfile) {
+      try {
+        const res = await userApi.updateUserProfile(currentUser, data);
+        return res;
+      } catch (err) {
+        return err;
       }
     },
     currentUser,
