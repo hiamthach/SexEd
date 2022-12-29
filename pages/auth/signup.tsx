@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 import SEOHead from 'components/common/SEOHead/SEOHead';
 import AuthLayout from 'components/feature/Auth/AuthLayout';
@@ -10,7 +9,6 @@ import { TextInput, createStyles, PasswordInput, Button, Grid, FileInput, Action
 import { DatePicker } from '@mantine/dates';
 import { toast } from 'react-toastify';
 import { IconEyeCheck, IconEyeOff, IconHome } from '@tabler/icons';
-import AuthConsumer from 'hooks/useAuth';
 
 import { uploadBytes, ref, getDownloadURL } from 'firebase/storage';
 import { storage, auth } from '../../firebase/store';
@@ -45,8 +43,6 @@ const useStyles = createStyles({
 
 const SignUp = () => {
   const { classes } = useStyles();
-  const router = useRouter();
-  const { signUp } = AuthConsumer();
 
   const handleSignUp = async (values: any) => {
     if (values.password !== values.confirm) {
@@ -58,25 +54,16 @@ const SignUp = () => {
         .then(() => {
           return getDownloadURL(ref(storage, id));
         })
-        .then((url) => {
+        .then(async (url) => {
           return userApi.addUser(id, {
             ...values,
             avatar: url,
           });
         })
-        .then(() => {
-          router.push('/auth/signin');
-        })
         .catch(() => {
           toast.error('register fail');
         });
     }
-
-    // try {
-    //   await signUp(values);
-    // } catch (error) {
-    //   console.log(error);
-    // }
   };
 
   const form = useForm({

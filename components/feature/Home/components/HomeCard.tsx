@@ -14,8 +14,8 @@ const HomeCard = () => {
 
   const renderBlogs = () => {
     return blogsData.slice(0, 3).map((blog) => (
-      <Grid.Col span={12} sm={6} md={4}>
-        <BlogCard key={blog.id} {...blog} />
+      <Grid.Col span={12} sm={6} md={4} key={blog.id}>
+        <BlogCard {...blog} />
       </Grid.Col>
     ));
   };
