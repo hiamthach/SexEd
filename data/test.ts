@@ -17,7 +17,7 @@ const testData: ITestList = [
   },
   {
     id: '3',
-    title: 'Trắc nghiệm kiểm tra tỉ lệ mắc các bệnh truyền nhiễm/ nhiễm',
+    title: 'Trắc nghiệm kiểm tra tỉ lệ mắc các bệnh truyền nhiễm/ nhiễm trùng qua đường tình dục.',
     description:
       'Sau khi quan hệ tình dục, nếu bạn lo lắng bản thân đang trong giai đoạn phơi nhiễm các bệnh lây truyền qua đường tình dục hoặc đã bị nhiễm. Bài trắc nghiệm dưới đây có thể cho bạn kết quả tham khảo.',
     link: 'https://bit.ly/KhaoSatTiLeMacSTDsSTIs',
