@@ -16,7 +16,7 @@ const BlogCarousel = ({ blogList }: IBlogCarousel) => {
       return (
         <Carousel.Slide key={blog.id} className="overflow-hidden">
           <div className="relative w-full h-full overflow-hidden ">
-            <div className="absolute left-[40px] bottom-[40px] z-[20] w-[40%]">
+            <div className="absolute left-[40px] bottom-[40px] z-[20] w-[80%] sm:w-[40%]">
               <h4 className=" text-white text-[20px] leading-[28px] font-[600] line-clamp-1">{blog.subTitle}</h4>
               <h2 className="text-white font-heading text-[36px] leading-[42px] mb-[12px] line-clamp-3">{blog.title}</h2>
               <h6 className="text-white text-[16px] font-[400] ">{dateHelper.format(blog.createdDate)}</h6>
