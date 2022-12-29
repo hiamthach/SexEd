@@ -1,15 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
 };
 
-module.exports = nextConfig;
+const nextTranslate = require('next-translate');
 
 module.exports = {
   ...nextTranslate(),
   images: {
-    domains: ['firebasestorage.googleapis.com'],
+    domains: ['firebasestorage.googleapis.com', 'topebox-news.appspot.com', 'www.topebox.com'],
   },
   nextConfig,
 };
